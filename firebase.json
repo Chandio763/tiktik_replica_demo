@@ -1,0 +1,37 @@
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "vendware-78f9b",
+          "appId": "1:692368598405:android:bb7660e1de5a814909d0ec",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "vendware-78f9b",
+          "configurations": {
+            "android": "1:692368598405:android:bb7660e1de5a814909d0ec",
+            "ios": "1:692368598405:ios:abf90c536490c4e809d0ec",
+            "web": "1:692368598405:web:6ef191c5615537eb09d0ec"
+          }
+        }
+      }
+    }
+  },
+  "hosting": {
+    "public": "build/web",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
