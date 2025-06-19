@@ -23,22 +23,26 @@ class HomeView extends GetView<HomeController> {
       //   title: Text("Tiktok"),
       //   centerTitle: true,
       // ),
-      body: ConstrainedBox(
-        constraints: BoxConstraints(maxWidth: 500),
-        child: Obx(
-          () =>
-              controller.posts.isEmpty
-                  ? Center(
-                    child: CircularProgressIndicator(color: AppColors.primary),
-                  )
-                  : PageView.builder(
-                    scrollDirection: Axis.vertical,
-                    itemCount: controller.posts.length,
-                    itemBuilder: (context, index) {
-                      final post = controller.posts[index];
-                      return VideoItem(post: post);
-                    },
-                  ),
+      body: Center(
+        child: ConstrainedBox(
+          constraints: BoxConstraints(maxWidth: 500),
+          child: Obx(
+            () =>
+                controller.posts.isEmpty
+                    ? Center(
+                      child: CircularProgressIndicator(
+                        color: AppColors.primary,
+                      ),
+                    )
+                    : PageView.builder(
+                      scrollDirection: Axis.vertical,
+                      itemCount: controller.posts.length,
+                      itemBuilder: (context, index) {
+                        final post = controller.posts[index];
+                        return VideoItem(post: post);
+                      },
+                    ),
+          ),
         ),
       ),
     );
